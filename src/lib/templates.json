@@ -1,0 +1,385 @@
+
+{
+  "categories": [
+    {
+      "name": "Business & Corporate",
+      "templates": [
+        {
+          "id": "corp-1",
+          "name": "Modern Corporate",
+          "description": "A sleek, professional template for established businesses.",
+          "previewUrl": "https://picsum.photos/seed/corp1-ws/1200/800"
+        },
+        {
+          "id": "corp-2",
+          "name": "Startup",
+          "description": "A vibrant and energetic design for new ventures.",
+          "previewUrl": "https://picsum.photos/seed/corp2-ws/1200/800"
+        },
+        {
+          "id": "corp-3",
+          "name": "Consulting Firm",
+          "description": "A clean and authoritative template for consultants.",
+          "previewUrl": "https://picsum.photos/seed/corp3-ws/1200/800"
+        },
+        {
+          "id": "corp-4",
+          "name": "Financial Services",
+          "description": "A trustworthy and secure design for finance companies.",
+          "previewUrl": "https://picsum.photos/seed/corp4-ws/1200/800"
+        },
+        {
+          "id": "corp-5",
+          "name": "Legal Firm",
+          "description": "A professional and serious template for law offices.",
+          "previewUrl": "https://picsum.photos/seed/corp5-ws/1200/800"
+        },
+        {
+          "id": "corp-6",
+          "name": "Marketing Agency",
+          "description": "A creative and bold design to showcase marketing prowess.",
+          "previewUrl": "https://picsum.photos/seed/corp6-ws/1200/800"
+        },
+        {
+          "id": "corp-7",
+          "name": "Insurance",
+          "description": "A friendly and approachable design for insurance providers.",
+          "previewUrl": "https://picsum.photos/seed/corp7-ws/1200/800"
+        },
+        {
+          "id": "corp-8",
+          "name": "Logistics",
+          "description": "An efficient and organized layout for supply chain businesses.",
+          "previewUrl": "https://picsum.photos/seed/corp8-ws/1200/800"
+        },
+        {
+          "id": "corp-9",
+          "name": "Human Resources",
+          "description": "A welcoming and professional look for HR firms.",
+          "previewUrl": "https://picsum.photos/seed/corp9-ws/1200/800"
+        },
+        {
+          "id": "corp-10",
+          "name": "General Business",
+          "description": "A versatile and adaptable template for any company.",
+          "previewUrl": "https://picsum.photos/seed/corp10-ws/1200/800"
+        }
+      ]
+    },
+    {
+      "name": "E-commerce & Retail",
+      "templates": [
+        {
+          "id": "ecom-1", "name": "Fashion Boutique", "description": "A stylish and image-focused template for clothing stores.", "previewUrl": "https://picsum.photos/seed/ecom1-ws/1200/800"
+        },
+        {
+          "id": "ecom-2", "name": "Electronics Hub", "description": "A modern and techy design for gadget stores.", "previewUrl": "https://picsum.photos/seed/ecom2-ws/1200/800"
+        },
+        {
+          "id": "ecom-3", "name": "Home Goods", "description": "A cozy and clean layout for home decor shops.", "previewUrl": "https://picsum.photos/seed/ecom3-ws/1200/800"
+        },
+        {
+          "id": "ecom-4", "name": "Artisan Crafts", "description": "A rustic and personal design for handmade goods.", "previewUrl": "https://picsum.photos/seed/ecom4-ws/1200/800"
+        },
+        {
+          "id": "ecom-5", "name": "Bookstore", "description": "A classic and scholarly template for selling books.", "previewUrl": "https://picsum.photos/seed/ecom5-ws/1200/800"
+        },
+        {
+          "id": "ecom-6", "name": "Sports Gear", "description": "An energetic and dynamic layout for athletic apparel.", "previewUrl": "https://picsum.photos/seed/ecom6-ws/1200/800"
+        },
+        {
+          "id": "ecom-7", "name": "Luxury Items", "description": "An elegant and minimalist design for high-end products.", "previewUrl": "https://picsum.photos/seed/ecom7-ws/1200/800"
+        },
+        {
+          "id": "ecom-8", "name": "Kids Toys", "description": "A fun and playful template for toy stores.", "previewUrl": "https://picsum.photos/seed/ecom8-ws/1200/800"
+        },
+        {
+          "id": "ecom-9", "name": "Grocery Store", "description": "A fresh and organized layout for online food markets.", "previewUrl": "https://picsum.photos/seed/ecom9-ws/1200/800"
+        },
+        {
+          "id": "ecom-10", "name": "General Store", "description": "A flexible template for a wide variety of products.", "previewUrl": "https://picsum.photos/seed/ecom10-ws/1200/800"
+        }
+      ]
+    },
+    {
+      "name": "Portfolio & Creative",
+      "templates": [
+        {
+          "id": "port-1", "name": "Photographer", "description": "A visually stunning, gallery-focused portfolio.", "previewUrl": "https://picsum.photos/seed/port1-ws/1200/800"
+        },
+        {
+          "id": "port-2", "name": "Graphic Designer", "description": "A bold and creative layout to showcase design work.", "previewUrl": "https://picsum.photos/seed/port2-ws/1200/800"
+        },
+        {
+          "id": "port-3", "name": "Writer", "description": "A clean, reader-friendly design for authors and copywriters.", "previewUrl": "https://picsum.photos/seed/port3-ws/1200/800"
+        },
+        {
+          "id": "port-4", "name": "Web Developer", "description": "A modern and technical portfolio for programmers.", "previewUrl": "https://picsum.photos/seed/port4-ws/1200/800"
+        },
+        {
+          "id": "port-5", "name": "Artist", "description": "A minimalist and elegant gallery for fine arts.", "previewUrl": "https://picsum.photos/seed/port5-ws/1200/800"
+        },
+        {
+          "id": "port-6", "name": "Musician", "description": "An immersive template with audio and video support.", "previewUrl": "https://picsum.photos/seed/port6-ws/1200/800"
+        },
+        {
+          "id": "port-7", "name": "Architect", "description": "A structured and professional layout for architectural projects.", "previewUrl": "https://picsum.photos/seed/port7-ws/1200/800"
+        },
+        {
+          "id": "port-8", "name": "Filmmaker", "description": "A cinematic design to showcase video reels and films.", "previewUrl": "https://picsum.photos/seed/port8-ws/1200/800"
+        },
+        {
+          "id": "port-9", "name": "Illustrator", "description": "A playful and vibrant portfolio for illustration work.", "previewUrl": "https://picsum.photos/seed/port9-ws/1200/800"
+        },
+        {
+          "id": "port-10", "name": "Creative Agency", "description": "A professional portfolio for a multi-disciplinary team.", "previewUrl": "https://picsum.photos/seed/port10-ws/1200/800"
+        }
+      ]
+    },
+    {
+      "name": "Blog & Personal",
+      "templates": [
+        {
+          "id": "blog-11", "name": "Travel Blog", "description": "A map-focused and adventurous design for travelers.", "previewUrl": "https://picsum.photos/seed/blog11-ws/1200/800"
+        },
+        {
+          "id": "blog-12", "name": "Food Blog", "description": "A delicious, recipe-focused layout for foodies.", "previewUrl": "https://picsum.photos/seed/blog12-ws/1200/800"
+        },
+        {
+          "id": "blog-13", "name": "Lifestyle Blog", "description": "A chic and modern design for lifestyle influencers.", "previewUrl": "https://picsum.photos/seed/blog13-ws/1200/800"
+        },
+        {
+          "id": "blog-14", "name": "Tech Blog", "description": "A clean, content-first layout for tech news and reviews.", "previewUrl": "https://picsum.photos/seed/blog14-ws/1200/800"
+        },
+        {
+          "id": "blog-15", "name": "Personal Journal", "description": "A minimalist and text-focused design for personal stories.", "previewUrl": "https://picsum.photos/seed/blog15-ws/1200/800"
+        },
+        {
+          "id": "blog-16", "name": "Fashion Blog", "description": "An elegant and stylish layout for fashion advice.", "previewUrl": "https://picsum.photos/seed/blog16-ws/1200/800"
+        },
+        {
+          "id": "blog-17", "name": "Parenting Blog", "description": "A warm and friendly design for sharing parenting tips.", "previewUrl": "https://picsum.photos/seed/blog17-ws/1200/800"
+        },
+        {
+          "id": "blog-18", "name": "Finance Blog", "description": "A professional and data-driven layout for financial advice.", "previewUrl": "https://picsum.photos/seed/blog18-ws/1200/800"
+        },
+        {
+          "id": "blog-19", "name": "DIY Blog", "description": "A creative and project-focused design for crafters.", "previewUrl": "https://picsum.photos/seed/blog19-ws/1200/800"
+        },
+        {
+          "id": "blog-20", "name": "Classic Blog", "description": "A timeless, simple, and elegant blogging template.", "previewUrl": "https://picsum.photos/seed/blog20-ws/1200/800"
+        }
+      ]
+    },
+    {
+      "name": "Real Estate",
+      "templates": [
+        {
+          "id": "re-1", "name": "Realty Agency", "description": "A professional site for a full real estate agency.", "previewUrl": "https://picsum.photos/seed/re1-ws/1200/800"
+        },
+        {
+          "id": "re-2", "name": "Single Agent", "description": "A personal and trustworthy site for an individual agent.", "previewUrl": "https://picsum.photos/seed/re2-ws/1200/800"
+        },
+        {
+          "id": "re-3", "name": "Luxury Properties", "description": "An elegant and high-end design for luxury listings.", "previewUrl": "https://picsum.photos/seed/re3-ws/1200/800"
+        },
+        {
+          "id": "re-4", "name": "Apartment Rentals", "description": "A user-friendly directory for apartment listings.", "previewUrl": "https://picsum.photos/seed/re4-ws/1200/800"
+        },
+        {
+          "id": "re-5", "name": "Commercial Real Estate", "description": "A corporate look for commercial property sales.", "previewUrl": "https://picsum.photos/seed/re5-ws/1200/800"
+        },
+        {
+          "id": "re-6", "name": "New Developments", "description": "A sleek site to showcase new construction projects.", "previewUrl": "https://picsum.photos/seed/re6-ws/1200/800"
+        },
+        {
+          "id": "re-7", "name": "Vacation Rentals", "description": "A beautiful, booking-focused site for holiday homes.", "previewUrl": "https://picsum.photos/seed/re7-ws/1200/800"
+        },
+        {
+          "id": "re-8", "name": "Property Management", "description": "A professional site for property management services.", "previewUrl": "https://picsum.photos/seed/re8-ws/1200/800"
+        },
+        {
+          "id": "re-9", "name": "Land Sales", "description": "A simple, map-focused site for selling undeveloped land.", "previewUrl": "https://picsum.photos/seed/re9-ws/1200/800"
+        },
+        {
+          "id": "re-10", "name": "Real Estate Blog", "description": "An informational blog for real estate news and tips.", "previewUrl": "https://picsum.photos/seed/re10-ws/1200/800"
+        }
+      ]
+    },
+    {
+      "name": "Restaurant & Food",
+      "templates": [
+        {
+          "id": "food-1", "name": "Fine Dining", "description": "An elegant template for high-end restaurants.", "previewUrl": "https://picsum.photos/seed/food1-ws/1200/800"
+        },
+        {
+          "id": "food-2", "name": "Cozy Cafe", "description": "A warm and inviting design for a local coffee shop.", "previewUrl": "https://picsum.photos/seed/food2-ws/1200/800"
+        },
+        {
+          "id": "food-3", "name": "Fast Casual", "description": "A vibrant and modern look for quick-service restaurants.", "previewUrl": "https://picsum.photos/seed/food3-ws/1200/800"
+        },
+        {
+          "id": "food-4", "name": "Bakery", "description": "A sweet and charming design for bakeries and pastry shops.", "previewUrl": "https://picsum.photos/seed/food4-ws/1200/800"
+        },
+        {
+          "id": "food-5", "name": "Pizzeria", "description": "A fun and classic template for a pizza place.", "previewUrl": "https://picsum.photos/seed/food5-ws/1200/800"
+        },
+        {
+          "id": "food-6", "name": "Food Truck", "description": "A cool and edgy design for a mobile food business.", "previewUrl": "https://picsum.photos/seed/food6-ws/1200/800"
+        },
+        {
+          "id": "food-7", "name": "Bar & Lounge", "description": "A moody and stylish template for a bar or lounge.", "previewUrl": "https://picsum.photos/seed/food7-ws/1200/800"
+        },
+        {
+          "id": "food-8", "name": "Catering Service", "description": "A professional layout to showcase catering menus.", "previewUrl": "https://picsum.photos/seed/food8-ws/1200/800"
+        },
+        {
+          "id": "food-9", "name": "Juice Bar", "description": "A fresh and healthy design for juice and smoothie bars.", "previewUrl": "https://picsum.photos/seed/food9-ws/1200/800"
+        },
+        {
+          "id": "food-10", "name": "Family Restaurant", "description": "A friendly and welcoming template for family dining.", "previewUrl": "https://picsum.photos/seed/food10-ws/1200/800"
+        }
+      ]
+    },
+    {
+      "name": "Non-Profit & Charity",
+      "templates": [
+        {
+          "id": "np-1", "name": "Charity Foundation", "description": "A professional and heartfelt design for foundations.", "previewUrl": "https://picsum.photos/seed/np1-ws/1200/800"
+        },
+        {
+          "id": "np-2", "name": "Community Event", "description": "An engaging template to promote a fundraising event.", "previewUrl": "https://picsum.photos/seed/np2-ws/1200/800"
+        },
+        {
+          "id": "np-3", "name": "Animal Shelter", "description": "A cute and friendly site for animal rescue organizations.", "previewUrl": "https://picsum.photos/seed/np3-ws/1200/800"
+        },
+        {
+          "id": "np-4", "name": "Environmental Cause", "description": "An earthy and impactful design for environmental groups.", "previewUrl": "https://picsum.photos/seed/np4-ws/1200/800"
+        },
+        {
+          "id": "np-5", "name": "Educational Program", "description": "An informative and clean layout for educational non-profits.", "previewUrl": "https://picsum.photos/seed/np5-ws/1200/800"
+        },
+        {
+          "id": "np-6", "name": "Health Organization", "description": "A trustworthy and caring design for health charities.", "previewUrl": "https://picsum.photos/seed/np6-ws/1200/800"
+        },
+        {
+          "id": "np-7", "name": "Social Justice", "description": "A bold and powerful template for advocacy groups.", "previewUrl": "https://picsum.photos/seed/np7-ws/1200/800"
+        },
+        {
+          "id": "np-8", "name": "Volunteer Hub", "description": "A community-focused site for recruiting volunteers.", "previewUrl": "https://picsum.photos/seed/np8-ws/1200/800"
+        },
+        {
+          "id": "np-9", "name": "Religious Organization", "description": "A serene and welcoming design for churches or temples.", "previewUrl": "https://picsum.photos/seed/np9-ws/1200/800"
+        },
+        {
+          "id": "np-10", "name": "Arts & Culture", "description": "A creative and vibrant template for cultural non-profits.", "previewUrl": "https://picsum.photos/seed/np10-ws/1200/800"
+        }
+      ]
+    },
+    {
+      "name": "Tech & SaaS",
+      "templates": [
+        {
+          "id": "tech-1", "name": "SaaS Product", "description": "A modern and feature-focused site for a software product.", "previewUrl": "https://picsum.photos/seed/tech1-ws/1200/800"
+        },
+        {
+          "id": "tech-2", "name": "Mobile App", "description": "A sleek and app-store-ready landing page.", "previewUrl": "https://picsum.photos/seed/tech2-ws/1200/800"
+        },
+        {
+          "id": "tech-3", "name": "AI Startup", "description": "A futuristic and innovative design for AI companies.", "previewUrl": "https://picsum.photos/seed/tech3-ws/1200/800"
+        },
+        {
+          "id": "tech-4", "name": "Developer Tool", "description": "A clean, documentation-heavy site for a dev tool.", "previewUrl": "https://picsum.photos/seed/tech4-ws/1200/800"
+        },
+        {
+          "id": "tech-5", "name": "Fintech Solution", "description": "A secure and modern layout for financial technology.", "previewUrl": "https://picsum.photos/seed/tech5-ws/1200/800"
+        },
+        {
+          "id": "tech-6", "name": "Cybersecurity", "description": "A dark and professional template for security firms.", "previewUrl": "https://picsum.photos/seed/tech6-ws/1200/800"
+        },
+        {
+          "id": "tech-7", "name": "IT Services", "description": "A professional and reliable site for IT consulting.", "previewUrl": "https://picsum.photos/seed/tech7-ws/1200/800"
+        },
+        {
+          "id": "tech-8", "name": "Data Analytics", "description": "A data-driven design for analytics platforms.", "previewUrl": "https://picsum.photos/seed/tech8-ws/1200/800"
+        },
+        {
+          "id": "tech-9", "name": "Blockchain Project", "description": "A decentralized and futuristic look for crypto projects.", "previewUrl": "https://picsum.photos/seed/tech9-ws/1200/800"
+        },
+        {
+          "id": "tech-10", "name": "Gaming Company", "description": "A dark and exciting template for a game studio.", "previewUrl": "https://picsum.photos/seed/tech10-ws/1200/800"
+        }
+      ]
+    },
+    {
+      "name": "Services",
+      "templates": [
+        {
+          "id": "serv-1", "name": "Plumbing & HVAC", "description": "A reliable and clean design for home services.", "previewUrl": "https://picsum.photos/seed/serv1-ws/1200/800"
+        },
+        {
+          "id": "serv-2", "name": "Landscaping", "description": "A green and beautiful layout for garden services.", "previewUrl": "https://picsum.photos/seed/serv2-ws/1200/800"
+        },
+        {
+          "id": "serv-3", "name": "Cleaning Service", "description": "A sparkling and fresh design for cleaning companies.", "previewUrl": "https://picsum.photos/seed/serv3-ws/1200/800"
+        },
+        {
+          "id": "serv-4", "name": "Personal Trainer", "description": "An energetic and motivational site for fitness coaches.", "previewUrl": "https://picsum.photos/seed/serv4-ws/1200/800"
+        },
+        {
+          "id": "serv-5", "name": "Hair Salon", "description": "A stylish and chic template for a beauty salon.", "previewUrl": "https://picsum.photos/seed/serv5-ws/1200/800"
+        },
+        {
+          "id": "serv-6", "name": "Financial Advisor", "description": "A professional and trustworthy site for finance advice.", "previewUrl": "https://picsum.photos/seed/serv6-ws/1200/800"
+        },
+        {
+          "id": "serv-7", "name": "Tutor", "description": "An educational and friendly design for tutoring services.", "previewUrl": "https://picsum.photos/seed/serv7-ws/1200/800"
+        },
+        {
+          "id": "serv-8", "name": "Handyman", "description": "A practical and reliable layout for repair services.", "previewUrl": "https://picsum.photos/seed/serv8-ws/1200/800"
+        },
+        {
+          "id": "serv-9", "name": "Event Planner", "description": "An elegant and organized site for planning events.", "previewUrl": "https://picsum.photos/seed/serv9-ws/1200/800"
+        },
+        {
+          "id": "serv-10", "name": "General Contractor", "description": "A strong and professional site for construction.", "previewUrl": "https://picsum.photos/seed/serv10-ws/1200/800"
+        }
+      ]
+    },
+    {
+      "name": "Other",
+      "templates": [
+        {
+          "id": "other-1", "name": "Coming Soon", "description": "A simple and effective 'coming soon' landing page.", "previewUrl": "https://picsum.photos/seed/other1-ws/1200/800"
+        },
+        {
+          "id": "other-2", "name": "Personal CV", "description": "A modern and professional online resume.", "previewUrl": "https://picsum.photos/seed/other2-ws/1200/800"
+        },
+        {
+          "id": "other-3", "name": "Wedding Invite", "description": "An elegant and romantic site for a wedding.", "previewUrl": "https://picsum.photos/seed/other3-ws/1200/800"
+        },
+        {
+          "id": "other-4", "name": "Conference", "description": "An informative and engaging site for an event.", "previewUrl": "https://picsum.photos/seed/other4-ws/1200/800"
+        },
+        {
+          "id": "other-5", "name": "Podcast", "description": "A clean layout to promote and share a podcast.", "previewUrl": "https://picsum.photos/seed/other5-ws/1200/800"
+        },
+        {
+          "id": "other-6", "name": "Online Course", "description": "A structured template for hosting educational content.", "previewUrl": "https://picsum.photos/seed/other6-ws/1200/800"
+        },
+        {
+          "id": "other-7", "name": "Community Forum", "description": "A template for building an online community.", "previewUrl": "https://picsum.photos/seed/other7-ws/1200/800"
+        },
+        {
+          "id": "other-8", "name": "Music Festival", "description": "A vibrant and exciting site for a festival.", "previewUrl": "https://picsum.photos/seed/other8-ws/1200/800"
+        },
+        {
+          "id": "other-9", "name": "Political Campaign", "description": "A strong and persuasive design for a campaign.", "previewUrl": "https://picsum.photos/seed/other9-ws/1200/800"
+        },
+        {
+          "id": "other-10", "name": "Generic Landing Page", "description": "A flexible and customizable one-page template.", "previewUrl": "https://picsum.photos/seed/other10-ws/1200/800"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,253 @@
+
+{
+  "entities": {
+    "Website": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Website",
+      "type": "object",
+      "description": "Represents a website managed by the Firebase SEO Site Factory.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Website entity."
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the website."
+        },
+        "slug": {
+          "type": "string",
+          "description": "The URL-friendly slug for the website (e.g., 'my-awesome-site')."
+        },
+        "purpose": {
+          "type": "string",
+          "description": "The overall purpose of the website (e.g., 'To promote a local business'). Used in AI content generation."
+        },
+        "targetAudience": {
+          "type": "string",
+          "description": "Description of the target audience for the website. Used in AI content generation."
+        },
+        "location": {
+          "type": "string",
+          "description": "Location data for local SEO purposes (e.g., address, coordinates). JSON string."
+        },
+        "contact": {
+          "type": "string",
+          "description": "Contact information for the website (e.g., email, phone, address, social profiles). JSON string."
+        },
+        "pages": {
+          "type": "array",
+          "description": "An array of Page IDs associated with this website. (Relationship: Website 1:N Page)",
+          "items": {
+            "type": "string"
+          }
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Timestamp indicating when the website was created.",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "Timestamp indicating when the website was last updated.",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "slug",
+        "purpose",
+        "targetAudience",
+        "location",
+        "contact",
+        "pages",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "Page": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Page",
+      "type": "object",
+      "description": "Represents a page within a website.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Page entity."
+        },
+        "websiteId": {
+          "type": "string",
+          "description": "Reference to the Website this page belongs to. (Relationship: Website 1:N Page)"
+        },
+        "title": {
+          "type": "string",
+          "description": "The title of the page."
+        },
+        "description": {
+          "type": "string",
+          "description": "A brief description of the page's content."
+        },
+        "order": {
+          "type": "number",
+          "description": "The order in which the page appears in the website's navigation."
+        },
+        "content": {
+          "type": "string",
+          "description": "The HTML content of the page."
+        },
+        "css": {
+          "type": "string",
+          "description": "Custom CSS for the page."
+        },
+        "seo": {
+          "type": "string",
+          "description": "SEO metadata for the page (e.g., meta tags, OpenGraph data). JSON string."
+        },
+        "designSpecs": {
+          "type": "string",
+          "description": "Design specifications for the page (e.g., colors, typography). JSON string."
+        },
+        "images": {
+          "type": "string",
+          "description": "Image URLs or references for the page. JSON string."
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Timestamp indicating when the page was created.",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "Timestamp indicating when the page was last updated.",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "websiteId",
+        "title",
+        "description",
+        "order",
+        "content",
+        "css",
+        "seo",
+        "designSpecs",
+        "images",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "SeoAudit": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "SeoAudit",
+      "type": "object",
+      "description": "Represents an SEO audit report for a website.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the SeoAudit entity."
+        },
+        "websiteId": {
+          "type": "string",
+          "description": "Reference to the Website this audit is for. (Relationship: Website 1:N SeoAudit)"
+        },
+        "report": {
+          "type": "string",
+          "description": "The SEO audit report data (e.g., Unlighthouse output). JSON string."
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Timestamp indicating when the audit was performed.",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "websiteId",
+        "report",
+        "createdAt"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password",
+      "anonymous",
+      "google.com"
+    ]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "/users/{uid}/websites/{websiteId}",
+        "definition": {
+          "entityName": "Website",
+          "schema": {
+            "$ref": "#/backend/entities/Website"
+          },
+          "description": "Stores website data, owned by the user.  Includes denormalized 'members' map for authorization independence if collaboration is added later.",
+          "params": [
+            {
+              "name": "uid",
+              "description": "The unique ID of the user."
+            },
+            {
+              "name": "websiteId",
+              "description": "The unique ID of the website."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{uid}/websites/{websiteId}/pages/{pageId}",
+        "definition": {
+          "entityName": "Page",
+          "schema": {
+            "$ref": "#/backend/entities/Page"
+          },
+          "description": "Stores page data for a specific website, owned by the user.",
+          "params": [
+            {
+              "name": "uid",
+              "description": "The unique ID of the user."
+            },
+            {
+              "name": "websiteId",
+              "description": "The unique ID of the website."
+            },
+            {
+              "name": "pageId",
+              "description": "The unique ID of the page."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{uid}/websites/{websiteId}/seoAudits/{seoAuditId}",
+        "definition": {
+          "entityName": "SeoAudit",
+          "schema": {
+            "$ref": "#/backend/entities/SeoAudit"
+          },
+          "description": "Stores SEO audit reports for a specific website, owned by the user.",
+          "params": [
+            {
+              "name": "uid",
+              "description": "The unique ID of the user."
+            },
+            {
+              "name": "websiteId",
+              "description": "The unique ID of the website."
+            },
+            {
+              "name": "seoAuditId",
+              "description": "The unique ID of the SEO audit."
+            }
+          ]
+        }
+      }
+    ],
+    "reasoning": "The Firestore structure is designed to optimize security, scalability, and debuggability for the Firebase SEO Site Factory. It prioritizes Authorization Independence via denormalization, Structural Segregation for simplified rules, and consistent Access Modeling.  Websites and their associated Pages and SeoAudits are organized to facilitate secure list operations and maintain data integrity.\n\nAuthorization Independence:\nWebsite ownership is managed through the `/users/{uid}/websites/{websiteId}` path, inherently tying website access to the user's ID.  Crucially, if you were to introduce collaborative features later (e.g., shared website management), the `websites` documents would need a denormalized `members` map (e.g., `members: {uid1: \"owner\", uid2: \"editor\"}`). This avoids `get()` calls in security rules.  Since Pages and SeoAudits are nested within Websites, they inherit the Website's access control, simplifying rules and ensuring that only authorized users can access or modify these subcollections.\n\nQAPs (Rules are not Filters):\nThe structure supports secure `list` operations by ensuring that all documents within a collection share the same security requirements. The path-based ownership for Websites (`/users/{uid}/websites/{websiteId}`) and the nested structure for Pages and SeoAudits ensure that listing these entities is always scoped to the user's context and their websites. If future requirements introduce different access levels (e.g., public/private pages), structural segregation would be required (e.g., moving public pages to a `/public_pages` collection)."
+  }
+}

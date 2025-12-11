@@ -1,0 +1,130 @@
+/**
+ * This ruleset enforces a strict user-ownership model for the Firebase SEO Site Factory.
+ * It is designed for rapid prototyping, focusing on strong authorization while maintaining
+ * flexibility in data schemas.
+ *
+ * Core Philosophy:
+ * Access control is primarily based on user ownership. All data, including websites, pages,
+ * and SEO audits, is stored in a way that directly links it to a specific user's UID.
+ * This ensures that users can only access and manage their own data.
+ *
+ * Data Structure:
+ * All user-generated content is nested under the `/users/{userId}` path. This creates a
+ * secure data silo for each user. For example, a user's websites are stored at
+ * `/users/{userId}/websites/{websiteId}`, and their pages are further nested within that structure.
+ *
+ * Key Security Decisions:
+ * - Strict Ownership: All operations (read, write, delete) are restricted to the
+ *   authenticated owner of the data. There is no public or shared access.
+ * - No User Listing: The rules do not allow querying the top-level `/users` collection,
+ *   preventing any possibility of enumerating the application's users.
+ * - Relational Integrity: On creation of subcollection documents (like Pages), the rules
+ *   verify that the parent document (the Website) exists, preventing orphaned data.
+ *
+ * Denormalization for Authorization:
+ * The security model relies on path-based authorization. By placing a user's UID directly
+ * in the document path (e.g., `/users/{uid}/...`), we can write simple, fast, and secure rules
+ * like `request.auth.uid == uid` without needing costly `get()` or `exists()` calls for most
+ * read operations.
+ *
+ * Structural Segregation:
+ * The data is segregated by user at the highest level (`/users/{uid}`). This is the most
+ * secure and performant way to manage private, user-specific data, especially for list
+ * operations, as it naturally scopes all queries to the requesting user's data tree.
+ */
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions for reusable logic
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    // Checks if the requesting user is the owner based on a userId.
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    // Checks if the requesting user is the owner of an existing document.
+    // CRITICAL: Used for update/delete to prevent acting on non-existent data.
+    function isExistingOwner(userId) {
+      return isOwner(userId) && resource != null;
+    }
+
+    // Checks if the parent website document exists.
+    function parentWebsiteExists(userId, websiteId) {
+      return exists(/databases/$(database)/documents/users/$(userId)/websites/$(websiteId));
+    }
+
+    // Validates that the websiteId in a subcollection document's data matches its path.
+    function websiteIdMatchesPathOnCreate(websiteId) {
+      return request.resource.data.websiteId == websiteId;
+    }
+
+    // Validates that the websiteId in a subcollection document is immutable on update.
+    function websiteIdIsImmutable() {
+      return request.resource.data.websiteId == resource.data.websiteId;
+    }
+
+    /**
+     * @description Controls access to a user's root document.
+     * @path /users/{uid}
+     * @allow A user (auth.uid: 'user_abc') can create their own user document (create) at /users/user_abc.
+     * @deny A user (auth.uid: 'user_xyz') cannot read or write another user's document at /users/user_abc.
+     * @principle Establishes a user's secure data silo upon their first action.
+     */
+    match /users/{uid} {
+      allow get: if isOwner(uid);
+      allow list: if false; // Disallow listing all users
+      allow create: if isOwner(uid);
+      allow update: if isExistingOwner(uid);
+      allow delete: if false; // User documents should generally not be deletable by the user
+    }
+
+    /**
+     * @description Manages access to a user's Website documents.
+     * @path /users/{uid}/websites/{websiteId}
+     * @allow A user (auth.uid: 'user_abc') can create, read, update, and delete their own website at /users/user_abc/websites/my_site.
+     * @deny A user (auth.uid: 'user_xyz') cannot access anything at /users/user_abc/websites/my_site.
+     * @principle Restricts access to a user's own data tree based on path ownership.
+     */
+    match /users/{uid}/websites/{websiteId} {
+      allow get: if isOwner(uid);
+      allow list: if isOwner(uid);
+      allow create: if isOwner(uid);
+      allow update: if isExistingOwner(uid);
+      allow delete: if isExistingOwner(uid);
+    }
+
+    /**
+     * @description Manages access to Page documents within a user's Website.
+     * @path /users/{uid}/websites/{websiteId}/pages/{pageId}
+     * @allow A user (auth.uid: 'user_abc') can create a new page if the parent website exists.
+     * @deny A user cannot create a page for a website that does not exist or that they do not own.
+     * @principle Inherits ownership from the parent document and validates relational integrity.
+     */
+    match /users/{uid}/websites/{websiteId}/pages/{pageId} {
+      allow get: if isOwner(uid);
+      allow list: if isOwner(uid);
+      allow create: if isOwner(uid) && parentWebsiteExists(uid, websiteId) && websiteIdMatchesPathOnCreate(websiteId);
+      allow update: if isExistingOwner(uid) && parentWebsiteExists(uid, websiteId) && websiteIdIsImmutable();
+      allow delete: if isExistingOwner(uid);
+    }
+
+    /**
+     * @description Manages access to SeoAudit documents within a user's Website.
+     * @path /users/{uid}/websites/{websiteId}/seoAudits/{seoAuditId}
+     * @allow A user (auth.uid: 'user_abc') can create a new SEO audit if the parent website exists.
+     * @deny A user cannot create an audit for a website that does not exist or that they do not own.
+     * @principle Inherits ownership from the parent document and validates relational integrity.
+     */
+    match /users/{uid}/websites/{websiteId}/seoAudits/{seoAuditId} {
+      allow get: if isOwner(uid);
+      allow list: if isOwner(uid);
+      allow create: if isOwner(uid) && parentWebsiteExists(uid, websiteId) && websiteIdMatchesPathOnCreate(websiteId);
+      allow update: if isExistingOwner(uid) && parentWebsiteExists(uid, websiteId) && websiteIdIsImmutable();
+      allow delete: if isExistingOwner(uid);
+    }
+  }
+}
